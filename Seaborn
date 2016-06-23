@@ -12,3 +12,39 @@ sns.distplot(births['prglngth'], kde=False)
 sns.plt.show()
 
 # Set axis labels using the sns.axlabels() function:
+
+sns.distplot(births['prglngth'], kde=False)
+# Here is the sns.axlbel function, with X and Y strings as needed:
+sns.axlabel('Pregnancy Length, weeks', 'Frequency')
+sns.plt.show()
+
+# Seaborn histrogram of births. Note that "sns.set_style" needs to come at the top
+
+import seaborn as sns
+
+sns.set_style("dark")
+sns.distplot(births["birthord"], kde=False)
+sns.axlabel("Birth number", "Frequency")
+sns.plt.show()
+
+
+# Box and whisker plots:
+
+births = pd.read_csv('births.csv')
+
+birthorder = births["birthord"]
+agepreg = births["agepreg"]
+
+sns.boxplot(x=birthorder, y=agepreg, data=births)
+sns.axlabel("Child number for mother", "Age of mother")
+sns.plt.show()
+
+print(len(births))
+
+# Pairplots are extremely powerful for initial investigation:
+
+quant_births = births[['agepreg', 'prglngth', 'birthord']]
+
+sns.pairplot(quant_births)
+sns.plt.show()
+
