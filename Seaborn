@@ -1,0 +1,14 @@
+# Awesome collection of print-ready graphs: http://stanford.edu/~mwaskom/software/seaborn/examples/index.html
+
+# Using Seaborn and importing:
+# Best practice is to use "sns.plt" explicitly
+
+import matplotlib.pyplot as plt
+import seaborn as sns
+%matplotlib inline
+
+# kde is kernal density estimate, a way to estimate the probability density function of a random variable
+sns.distplot(births['prglngth'], kde=False)
+sns.plt.show()
+
+# Set axis labels using the sns.axlabels() function:
